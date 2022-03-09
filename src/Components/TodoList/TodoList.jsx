@@ -1,9 +1,7 @@
 import "./TodoList.scss";
 import React from "react";
-import checkPropTypes from "prop-types";
 import TodoItem from "../TodoItem/TodoItem";
 import NoFound from "../NoFound/NoFound";
-import Buttons from "../TodoButtons/TodoButtons";
 
 function TodoList() {
   const [todos, setTodos] = React.useState(
@@ -63,7 +61,7 @@ function TodoList() {
 
   return (
     <>
-      <div className="todo__input-box">
+      <header className="todo__input-box">
         <input
           type="text"
           className="todo__input"
@@ -93,7 +91,7 @@ function TodoList() {
             }
           }}
         />
-      </div>
+      </header>
 
       <ul className="todo__list">
         {todos.length == 0 ? (
@@ -112,7 +110,7 @@ function TodoList() {
         )}
       </ul>
       {
-        <div className="buttons__box">
+        <footer className="buttons__box">
           <button
             className={`buttons ${type === "all" ? "used" : ""}`}
             onClick={() => setTypeToLocal("all")}
@@ -133,7 +131,7 @@ function TodoList() {
           >
             Uncompleted
           </button>
-        </div>
+        </footer>
       }
     </>
   );
