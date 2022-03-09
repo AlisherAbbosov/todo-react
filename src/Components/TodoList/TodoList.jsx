@@ -14,6 +14,7 @@ function TodoList() {
     window.localStorage.getItem("type") || "all"
   );
 
+  // render todo with ID
   const getTodoById = (_type, _todos) => {
     if (_type === "all") {
       return _todos;
@@ -28,6 +29,7 @@ function TodoList() {
     }
   };
 
+  // item's handles
   const handleDelete = evt => {
     const todoId = evt.target.dataset.todoId - 0;
 
@@ -53,12 +55,11 @@ function TodoList() {
     setTodos([...todos]);
   };
 
+  // add type to local
   const setTypeToLocal = _type => {
     window.localStorage.setItem("type", _type);
     setType(_type);
   };
-
-  // setTypeToLocal("all");
 
   return (
     <>
@@ -79,6 +80,7 @@ function TodoList() {
                 "todos",
                 JSON.stringify([...todos, newTodo])
               );
+
               const newTodos = [...todos, newTodo];
 
               if (type !== "all") {
@@ -117,12 +119,14 @@ function TodoList() {
           >
             All
           </button>
+
           <button
             className={`buttons ${type === "completed" ? "used" : ""}`}
             onClick={() => setTypeToLocal("completed")}
           >
             Completed
           </button>
+
           <button
             className={`buttons ${type === "uncomleted" ? "used" : ""}`}
             onClick={() => setTypeToLocal("uncomleted")}
@@ -134,10 +138,5 @@ function TodoList() {
     </>
   );
 }
-
-Buttons.propTypes = {
-  text: checkPropTypes.string,
-  onClick: checkPropTypes.func,
-};
 
 export default TodoList;
