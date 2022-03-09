@@ -1,0 +1,73 @@
+// Todo Form
+.todo {
+  &__input {
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    color: #212529;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 8px;
+    padding: 10px 15px;
+    width: 50%;
+  }
+
+  &__input-box {
+    border-bottom: 2.5px solid #bccee4;
+    padding: 20px;
+    text-align: center;
+  }
+
+  &__add-btn {
+    background-color: #ffc107;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 9px;
+    cursor: pointer;
+  }
+}
+
+// ===================================
+// Todo List
+// ===================================
+
+.todo__list {
+  background-color: #f3f3f3;
+  height: 400px;
+  padding: 0;
+  list-style: none;
+  margin: 30px auto;
+  padding-right: 10px;
+  width: 800px;
+  overflow: scroll;
+  // cursor: pointer;
+
+  // background-color: #f3f3f3;
+  // border-radius: 25px;
+  // height: 400px;
+  // list-style: none;
+  // // margin: auto;
+  // overflow: scroll;
+  // padding-right: 10px;
+  // width: 800px;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    cursor: pointer;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: gray;
+
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      transition: all 5s;
+      background: rgb(102, 101, 101);
+    }
+  }
+}
